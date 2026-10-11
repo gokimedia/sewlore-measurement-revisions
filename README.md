@@ -61,15 +61,15 @@ No network, account, telemetry, payment, external ads, or access outside the vau
 ## Build and verify
 
 ```sh
-npm ci --ignore-scripts --legacy-peer-deps
+npm ci
 npm test
 npm run lint
 node release.mjs
 ```
 
-Node 20 or newer builds the bundle; Python 3 is needed only for the release ZIP helper. The lockfile pins the official API and build tools. `--legacy-peer-deps` is needed because eslint-plugin-obsidianmd 0.4.2 declares a peer API version of 1.8.7 while this package type-checks against the current official 1.14.4 API. No lint rule is disabled to hide that difference.
+Node 20 or newer builds the bundle; Python 3 is needed only for the release ZIP helper. The lockfile pins the official API and build tools. The official lint tooling declares Obsidian 1.8.7 as its peer dependency. A private `quality` workspace satisfies that peer separately; the plugin itself still type-checks and builds against the official 1.14.4 API. Normal `npm ci` installs the complete locked workspace graph without legacy peer resolution, forced installation or dependency overrides. The full recommended lint configuration remains enabled.
 
-Tests exercise mixed units, sign conventions, added/removed points, case-sensitive labels, duplicate/invalid values, fenced JSON parsing, Markdown escaping, compiled commands, cancelled/invalid writes, and separate comparison reports. The lint configuration uses the official recommended rules. `release.mjs` creates reproducible release files and a source ZIP. This package is not yet published in the community directory; native application testing remains separate from these checks.
+Tests exercise mixed units, sign conventions, added/removed points, case-sensitive labels, duplicate/invalid values, fenced JSON parsing, Markdown escaping, compiled commands, cancelled/invalid writes, and separate comparison reports. The lint configuration uses the official recommended rules. `release.mjs` creates reproducible release files and a source ZIP. A public [community directory entry](https://community.obsidian.md/plugins/sewlore-measurement-revisions) exists. Community installation becomes available after the latest release passes the directory's automated review. Acceptance of this release must be confirmed separately; native application testing remains separate from these checks.
 
 ## License
 
