@@ -1,0 +1,10 @@
+{
+  "id": "sewlore-measurement-revisions",
+  "name": "Measurement Revisions",
+  "version": "1.0.0",
+  "minAppVersion": "1.14.4",
+  "description": "Compare sewing measurement revisions with explicit units and save a separate change report in your vault.",
+  "author": "Sewlore",
+  "authorUrl": "https://sewlore.com/",
+  "isDesktopOnly": false
+}

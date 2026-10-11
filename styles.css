@@ -1,0 +1,5 @@
+.sewlore-measurements textarea { width: 100%; min-height: 7rem; }
+.sewlore-measurements .sewlore-table-wrap { overflow-x: auto; }
+.sewlore-measurements table { width: 100%; border-collapse: collapse; }
+.sewlore-measurements th, .sewlore-measurements td { padding: 0.45rem; border-bottom: 1px solid var(--background-modifier-border); text-align: left; }
+.sewlore-measurements .sewlore-error { color: var(--text-error); }
